@@ -1,0 +1,28 @@
+# Specifies the version of the Kubernetes API we are using
+apiVersion: apps/v1
+# The type of Kubernetes object we are creating (a Deployment)
+kind: Deployment
+metadata:
+  # The name of our deployment
+  name: wisecow-deployment
+spec:
+  # We want to run 2 copies (pods) of our application for basic redundancy
+  replicas: 2
+  selector:
+    matchLabels:
+      # This connects the Deployment to the pods it manages
+      app: wisecow
+  template:
+    metadata:
+      labels:
+        # The pods created by this deployment will have this label
+        app: wisecow
+    spec:
+      containers:
+      - name: wisecow
+        # ===> CRITICAL: YOU MUST CHANGE THIS LINE! <===
+        # This tells Kubernetes which Docker image to pull and run.
+        image: krishna2317/wisecow:latest
+        ports:
+        # The container exposes port 8080, so we list it here
+        - containerPort: 8080
