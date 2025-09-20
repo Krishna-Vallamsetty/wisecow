@@ -1,28 +1,72 @@
-# Cow wisdom web server
+# Wisecow Application: Containerization and Kubernetes Deployment
 
-## Prerequisites
+This project demonstrates the end-to-end process of containerizing a Go web application, setting up an automated CI/CD pipeline with GitHub Actions, and deploying it to a local Kubernetes (Minikube) cluster. This project was completed as part of a technical assessment.
 
-```
-sudo apt install fortune-mod cowsay -y
-```
+## 🚀 Tech Stack
 
-## How to use?
+* **Application:** Go
+* **Containerization:** Docker
+* **Container Orchestration:** Kubernetes (Minikube)
+* **CI/CD Automation:** GitHub Actions
 
-1. Run `./wisecow.sh`
-2. Point the browser to server port (default 4499)
+## 📁 Repository Structure
 
-## What to expect?
-![wisecow](https://github.com/nyrahul/wisecow/assets/9133227/8d6bfde3-4a5a-480e-8d55-3fef60300d98)
+├── .github/workflows/  # Contains the CI/CD pipeline configuration
+│   └── ci-cd-pipeline.yaml
+├── k8s/                # Contains Kubernetes manifest files
+│   ├── deployment.yaml
+│   └── service.yaml
+├── Dockerfile          # A multi-stage Dockerfile for a small, secure image
+├── go.mod              # Go module file for dependency management
+└── main.go             # The Go application source code
 
-# Problem Statement
-Deploy the wisecow application as a k8s app
 
-## Requirement
-1. Create Dockerfile for the image and corresponding k8s manifest to deploy in k8s env. The wisecow service should be exposed as k8s service.
-2. Github action for creating new image when changes are made to this repo
-3. [Challenge goal]: Enable secure TLS communication for the wisecow app.
+## ⚙️ How to Run This Project
 
-## Expected Artifacts
-1. Github repo containing the app with corresponding dockerfile, k8s manifest, any other artifacts needed.
-2. Github repo with corresponding github action.
-3. Github repo should be kept private and the access should be enabled for following github IDs: nyrahul
+### Prerequisites
+* [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+* [Minikube](https://minikube.sigs.k8s.io/docs/start/)
+* [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+
+### Steps
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/Krishna-Vallamsetty/wisecow.git](https://github.com/Krishna-Vallamsetty/wisecow.git)
+    cd wisecow
+    ```
+
+2.  **Start your local Kubernetes cluster:**
+    ```bash
+    minikube start
+    ```
+
+3.  **Deploy the application to the cluster:** The `deployment.yaml` is pre-configured to use the public Docker image `krishna2317/wisecow:latest`.
+    ```bash
+    kubectl apply -f k8s/
+    ```
+
+4.  **Verify the deployment:** Wait a minute for the image to be pulled, then check that the pods are running.
+    ```bash
+    kubectl get pods
+    ```
+    You should see two `wisecow-deployment` pods with a `Running` status.
+
+5.  **Access the application:** This command will automatically open the application in your web browser.
+    ```bash
+    minikube service wisecow-service
+    ```
+    You should see the message: `Moo! Hello from the Wisecow Go Application!`
+
+## 🤖 CI/CD Pipeline
+
+This project features a fully automated Continuous Integration (CI) pipeline using GitHub Actions.
+
+* **Trigger:** The workflow is automatically triggered on every `git push` to the `main` branch.
+* **Process:**
+    1.  The code is checked out.
+    2.  The workflow securely logs in to Docker Hub using repository secrets.
+    3.  A new Docker image is built using the `Dockerfile`.
+    4.  The newly built image is tagged and pushed to the Docker Hub repository at `krishna2317/wisecow:latest`.
+
+---
+
