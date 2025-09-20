@@ -1,0 +1,6 @@
+2025-09-20 17:22:44,723 - INFO - --- Starting Application Health Checks ---
+2025-09-20 17:22:46,427 - INFO - UP: 'https://www.google.com' is functioning correctly (Status Code: 200)
+2025-09-20 17:22:48,560 - INFO - UP: 'https://www.github.com' is functioning correctly (Status Code: 200)
+2025-09-20 17:22:50,832 - ERROR - DOWN: 'http://httpbin.org/status/503' is not functioning correctly (Status Code: 503)
+2025-09-20 17:22:50,985 - ERROR - DOWN: 'https://thissitedoesnotexist12345.com' is not reachable (Connection error)
+2025-09-20 17:22:50,986 - INFO - --- Application Health Checks Finished ---

@@ -1,0 +1,12 @@
+2025-09-20 17:21:13,676 - INFO - --- Starting System Health Check ---
+2025-09-20 17:21:14,686 - INFO - OK: CPU usage is normal: 21.0%
+2025-09-20 17:21:14,691 - WARNING - ALERT: High memory usage detected: 91.3%
+2025-09-20 17:21:14,692 - INFO - OK: Disk space is normal: 19.0% used
+2025-09-20 17:21:14,696 - INFO - INFO: Total number of running processes: 264
+2025-09-20 17:21:14,696 - INFO - --- System Health Check Finished ---
+2025-09-20 17:24:11,029 - INFO - --- Starting System Health Check ---
+2025-09-20 17:24:12,030 - INFO - OK: CPU usage is normal: 50.0%
+2025-09-20 17:24:12,037 - WARNING - ALERT: High memory usage detected: 91.7%
+2025-09-20 17:24:12,039 - INFO - OK: Disk space is normal: 19.0% used
+2025-09-20 17:24:12,042 - INFO - INFO: Total number of running processes: 268
+2025-09-20 17:24:12,043 - INFO - --- System Health Check Finished ---
