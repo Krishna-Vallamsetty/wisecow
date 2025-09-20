@@ -11,6 +11,7 @@ This project demonstrates the end-to-end process of containerizing a Go web appl
 
 ## 📁 Repository Structure
 
+.
 ├── .github/workflows/  # Contains the CI/CD pipeline configuration
 │   └── ci-cd-pipeline.yaml
 ├── k8s/                # Contains Kubernetes manifest files
@@ -18,7 +19,8 @@ This project demonstrates the end-to-end process of containerizing a Go web appl
 │   └── service.yaml
 ├── Dockerfile          # A multi-stage Dockerfile for a small, secure image
 ├── go.mod              # Go module file for dependency management
-└── main.go             # The Go application source code
+├── main.go             # The Go application source code
+└── wisecow-output.png  # Screenshot of the final running application
 
 
 ## ⚙️ How to Run This Project
@@ -49,13 +51,16 @@ This project demonstrates the end-to-end process of containerizing a Go web appl
     ```bash
     kubectl get pods
     ```
-    You should see two `wisecow-deployment` pods with a `Running` status.
 
-5.  **Access the application:** This command will automatically open the application in your web browser.
+5.  **Access the application:**
     ```bash
     minikube service wisecow-service
     ```
-    You should see the message: `Moo! Hello from the Wisecow Go Application!`
+
+### Expected Output
+You should see the following message in your browser:
+
+![Wisecow Application Output](wisecow-output.png)
 
 ## 🤖 CI/CD Pipeline
 
@@ -69,4 +74,3 @@ This project features a fully automated Continuous Integration (CI) pipeline usi
     4.  The newly built image is tagged and pushed to the Docker Hub repository at `krishna2317/wisecow:latest`.
 
 ---
-
