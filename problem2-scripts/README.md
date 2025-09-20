@@ -29,7 +29,7 @@ This shows an example of the script successfully detecting and alerting on high 
 2025-09-20 17:21:14,691 - WARNING - ALERT: High memory usage detected: 91.3%
 
 **
-**2. Application Health Checker (app_health_checker.py)****
+## 2. Application Health Checker (app_health_checker.py)
 This script acts as an external uptime monitor. It checks the health of a list of predefined web applications by making HTTP requests and validating their status codes. It logs whether each application is UP (functioning correctly) or DOWN (unavailable or returning an error) to both the console and a file (app_health.log).
 
 The script is robust and can differentiate between various failure modes, such as timeouts, connection errors, and server-side errors (e.g., 503).
