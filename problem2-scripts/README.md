@@ -23,6 +23,8 @@ Code snippet
 2025-09-20 17:30:01,234 - INFO - OK: CPU usage is normal: 15.4%
 2025-09-20 17:30:01,235 - INFO - OK: Memory usage is normal: 45.8%
 2025-09-20 17:30:01,236 - INFO - OK: Disk space is normal: 55.2% used
+
+
 2. Application Health Checker (app_health_checker.py) 🌐
 This script acts as an external uptime monitor. It checks the health of a list of predefined web applications by making HTTP requests and validating their status codes. It logs whether each application is UP (functioning correctly) or DOWN (unavailable or returning an error) to both the console and a file (app_health.log).
 
