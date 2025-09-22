@@ -6,7 +6,9 @@ This repository contains Python script solutions for the second problem statemen
 
 ## 1. System Health Monitoring Script (`health_monitor.py`) 🖥️
 
-This script monitors the health of the local system by checking key resources: **CPU usage**, **memory usage**, and **disk space**. It is designed to be proactive, logging the status to both the console and a persistent file (`system_health.log`). If any resource exceeds a predefined threshold, it will raise a clear alert.
+This script monitors the health of the local system by checking key resources: **CPU usage, memory usage, and disk space**.  
+It is designed to be proactive, logging the status to both the console and a persistent file (`system_health.log`).  
+If any resource exceeds a predefined threshold, it will raise a clear alert.
 
 ### Setup and Execution
 
@@ -16,30 +18,31 @@ pip install psutil
 
 # 2. Execute the script
 python health_monitor.py
-Example Output (Normal Conditions)
-Code snippet
+Example Output (Normal Conditions):
 
+pgsql
+Copy code
 2025-09-20 17:30:00,123 - INFO - --- Starting System Health Check ---
-2025-09-20 17:30:01,234 - INFO - OK: CPU usage is normal: 15.4%
-2025-09-20 17:30:01,235 - INFO - OK: Memory usage is normal: 45.8%
-2025-09-20 17:30:01,236 - INFO - OK: Disk space is normal: 55.2% used
-
-
+2025-09-20 17:30:01,234 - INFO - CPU usage is normal: 15.4%
+2025-09-20 17:30:01,235 - INFO - Memory usage is normal: 45.8%
+2025-09-20 17:30:01,236 - INFO - Disk space is normal: 25.2% used
 2. Application Health Checker (app_health_checker.py) 🌐
-This script acts as an external uptime monitor. It checks the health of a list of predefined web applications by making HTTP requests and validating their status codes. It logs whether each application is UP (functioning correctly) or DOWN (unavailable or returning an error) to both the console and a file (app_health.log).
+This script acts as an external uptime monitor.
+It checks the health of a list of predefined web applications by making HTTP requests and verifying status codes.
 
 Setup and Execution
-Bash
-
+bash
+Copy code
 # 1. Install the required requests library
 pip install requests
 
 # 2. Execute the script
 python app_health_checker.py
-Example Output
-Code snippet
+Example Output:
 
+yaml
+Copy code
 2025-09-20 17:22:44,723 - INFO - --- Starting Application Health Checks ---
-2025-09-20 17:22:46,427 - INFO - UP: '[https://www.google.com](https://www.google.com)' is functioning correctly (Status Code: 200)
-2025-09-20 17:22:48,560 - INFO - UP: '[https://www.github.com](https://www.github.com)' is functioning correctly (Status Code: 200)
-2025-09-20 17:22:50,832 - ERROR - DOWN: '[http://httpbin.org/status/503](http://httpbin.
+2025-09-20 17:22:46,427 - INFO - UP: [https://www.google.com] is functioning correctly (Status Code: 200)
+2025-09-20 17:22:48,650 - INFO - UP: [https://www.github.com] is functioning correctly (Status Code: 200)
+2025-09-20 17:22:50,832 - ERROR - DOWN: [http://httpbin.org/status/503] returned error (Status Code: 503)
