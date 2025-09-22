@@ -1,5 +1,5 @@
 Problem 2: DevOps Scripts in Python
-This repository contains Python script solutions for the second problem statement of the AccuKnox DevOps Trainee assessment. I have chosen to implement Objective 1 (System Health Monitoring) and Objective 4 (Application Health Checker).
+This repository contains Python script solutions for the second problem statement of the AccuKnox DevOps Trainee assessment. We have chosen to implement Objective 1 (System Health Monitoring) and Objective 4 (Application Health Checker).
 
 1. System Health Monitoring Script (health_monitor.py) 🖥️
 This script monitors the health of the local system by checking key resources: CPU usage, memory usage, and disk space. It is designed to be proactive, logging the status to both the console and a persistent file (system_health.log). If any resource exceeds a predefined threshold, it will raise a clear alert.
