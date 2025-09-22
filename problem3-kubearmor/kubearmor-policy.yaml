@@ -1,0 +1,15 @@
+apiVersion: security.kubearmor.com/v1
+kind: KubeArmorPolicy
+metadata:
+  name: wisecow-block-ls
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: wisecow
+  process:
+    matchPaths:
+    - path: /bin/ls
+    action: Block
+  severity: 5
+  message: "Blocked an attempt to use the 'ls' command in the wisecow pod."
