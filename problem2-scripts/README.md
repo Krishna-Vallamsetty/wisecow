@@ -1,6 +1,6 @@
 # Problem 2: DevOps Scripts in Python
 
-This folder contains the Python script solutions for the second problem statement of the AccuKnox DevOps Trainee assessment. We have chosen to implement **Objective 1 (System Health Monitoring)** and **Objective 4 (Application Health Checker)**.
+This folder contains the Python script solutions for the second problem statement of the AccuKnox DevOps Trainee assessment. i have chosen to implement **Objective 1 (System Health Monitoring)** and **Objective 4 (Application Health Checker)**.
 
 ## 1. System Health Monitoring Script (`health_monitor.py`)
 
@@ -16,6 +16,7 @@ pip install psutil
 
 # 2. Execute the script
 python health_monitor.py
+
 Example Output (Normal Conditions)
 2025-09-20 17:30:00,123 - INFO - --- Starting System Health Check ---
 2025-09-20 17:30:01,234 - INFO - OK: CPU usage is normal: 15.4%
@@ -28,22 +29,25 @@ This shows an example of the script successfully detecting and alerting on high 
 
 2025-09-20 17:21:14,691 - WARNING - ALERT: High memory usage detected: 91.3%
 
-**
-## 2. Application Health Checker (app_health_checker.py)
-This script acts as an external uptime monitor. It checks the health of a list of predefined web applications by making HTTP requests and validating their status codes. It logs whether each application is UP (functioning correctly) or DOWN (unavailable or returning an error) to both the console and a file (app_health.log).
+---
+
+## 2. Application Health Checker (`app_health_checker.py`)
+
+This script acts as an external uptime monitor. It checks the health of a list of predefined web applications by making HTTP requests and validating their status codes. It logs whether each application is `UP` (functioning correctly) or `DOWN` (unavailable or returning an error) to both the console and a file (`app_health.log`).
 
 The script is robust and can differentiate between various failure modes, such as timeouts, connection errors, and server-side errors (e.g., 503).
 
-**Setup and Execution**
+### Setup and Execution
+
 You can install the necessary library and run the script with the following commands:
 
-Bash
-
+```bash
 # 1. Install the required requests library
 pip install requests
 
 # 2. Execute the script
 python app_health_checker.py
+
 Example Output
 The script is pre-configured to check a mix of working and non-working URLs to demonstrate its full capabilities.
 
